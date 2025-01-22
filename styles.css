@@ -47,6 +47,12 @@ main {
     text-align: center;
 }
 
+.projects {
+    background: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+}
+
 section {
     padding: 20px;
     margin: 0 auto;
