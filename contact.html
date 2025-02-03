@@ -3,30 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Jaida Lebron</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, #ffd6e7, #fde7ff);
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            background: url('2.png') no-repeat center center;
+            background-size: contain;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            color: white;
+            margin: 0.5rem 0;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: white;
+            margin: 0.5rem 0;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .button {
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            border-radius: 0.5rem;
+            color: white;
+            background-color: #4b0082;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #6a0dad;
+        }
+
+        .button i {
+            margin-right: 0.5rem;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-<h1 class="contact-title">Let's Connect!</h1>
-             
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section>
-
-                   </section>
-    </main>
-    <footer>
-       
-    </footer>
-    <script src="script.js"></script>
+    <div class="container">
+        <h1 class="title">Hi, my name is 👋</h1>
+        <h2 class="title">Jaida Lebron</h2>
+        <p class="subtitle">I'm currently looking for full-time opportunities. If you'd like to get in touch, feel free to reach out. I’d be happy to connect with you!</p>
+        <div class="button-container">
+            <a href="#" class="button" target="_blank">
+                <i>🐙</i> GitHub
+            </a>
+            <a href="#" class="button" target="_blank">
+                <i>🔗</i> LinkedIn
+            </a>
+            <a href="#" class="button" target="_blank">
+                <i>📄</i> Resume
+            </a>
+        </div>
+    </div>
 </body>
 </html>
-
