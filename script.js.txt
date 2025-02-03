@@ -1,0 +1,13 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const riseElements = document.querySelectorAll(".rise-text");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, { threshold: 0.2 }); // Adjust threshold to control when animation triggers
+
+  riseElements.forEach((el) => observer.observe(el));
+});
