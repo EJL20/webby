@@ -27,6 +27,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+.rise-text {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.rise-text.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 }
         }
 
@@ -69,9 +81,14 @@
 </head>
 <body>
     <div class="container">
+<div class="rise-container">
+  <p class="rise-text">
+
         <h1 class="title">Hi, my name is 👋</h1>
         <h2 class="title">Jaida Lebron</h2>
         <p class="subtitle">I'm currently looking for full-time opportunities. If you'd like to get in touch, feel free to reach out. I’d be happy to connect with you!</p>
+</p>
+</div>
         <div class="button-container">
             <a href="#" class="button" target="_blank">
                 <i>🐙</i> GitHub
