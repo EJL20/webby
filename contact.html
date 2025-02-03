@@ -16,30 +16,36 @@
             overflow: hidden;
         }
 
-       .container {
-    text-align: center;
-    background: url('2.png') no-repeat center center;
-    background-size: cover; /* Ensures the image fills the screen */
-    background-position: center; /* Centers the image */
-    width: 100%;
-    height: 100vh; /* Makes the container fill the viewport height */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+        .wrapper {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
 
-.rise-text {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
+        .background-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%; /* Adjust height as needed */
+            background: url('1.png') no-repeat center center;
+            background-size: cover;
+            z-index: 1;
+        }
 
-.rise-text.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-}
+        .container {
+            position: absolute;
+            top: 50%; /* Adjust based on the height of .background-top */
+            left: 0;
+            width: 100%;
+            height: 50%; /* Adjust height as needed */
+            background: url('2.png') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
         }
 
         .title {
@@ -80,25 +86,23 @@
     </style>
 </head>
 <body>
-    <div class="container">
-<div class="rise-container">
-  <p class="rise-text">
-
-        <h1 class="title">Hi, my name is 👋</h1>
-        <h2 class="title">Jaida Lebron</h2>
-        <p class="subtitle">I'm currently looking for full-time opportunities. If you'd like to get in touch, feel free to reach out. I’d be happy to connect with you!</p>
-</p>
-</div>
-        <div class="button-container">
-            <a href="#" class="button" target="_blank">
-                <i>🐙</i> GitHub
-            </a>
-            <a href="#" class="button" target="_blank">
-                <i>🔗</i> LinkedIn
-            </a>
-            <a href="#" class="button" target="_blank">
-                <i>📄</i> Resume
-            </a>
+    <div class="wrapper">
+        <div class="background-top"></div>
+        <div class="container">
+            <h1 class="title">Hi, my name is 👋</h1>
+            <h2 class="title">Jaida Lebron</h2>
+            <p class="subtitle">I'm currently looking for full-time opportunities. If you'd like to get in touch, feel free to reach out. I’d be happy to connect with you!</p>
+            <div class="button-container">
+                <a href="#" class="button" target="_blank">
+                    <i>🐙</i> GitHub
+                </a>
+                <a href="#" class="button" target="_blank">
+                    <i>🔗</i> LinkedIn
+                </a>
+                <a href="#" class="button" target="_blank">
+                    <i>📄</i> Resume
+                </a>
+            </div>
         </div>
     </div>
 </body>
