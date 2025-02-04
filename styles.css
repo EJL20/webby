@@ -17,6 +17,11 @@ body, h1, h2, h3, p, ul, li, form, input, textarea {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
+.background-top, .background-bottom {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 /* Smooth hover effect for flashcards */
 .card:hover {
     transform: translateY(-5px); /* Subtle lift effect */
