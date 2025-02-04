@@ -1,32 +1,20 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const riseElements = document.querySelectorAll(".rise-text");
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  }, { threshold: 0.2 }); // Adjust threshold to control when animation triggers
-
-  riseElements.forEach((el) => observer.observe(el));
-});
-document.addEventListener("DOMContentLoaded", function () {
+<script>
+    // Function to detect if an element is in the viewport
     function isInViewport(element) {
         const rect = element.getBoundingClientRect();
         return rect.top < window.innerHeight && rect.bottom >= 0;
     }
 
-    function handleScroll() {
+    // Function to handle visibility of the rise-text
+    function handleVisibility() {
         const riseText = document.querySelector('.rise-text');
         if (riseText && isInViewport(riseText)) {
             riseText.classList.add('visible');
         }
     }
 
-    // Trigger on load in case the element is already in view
-    handleScroll();
-
-    // Listen for scroll event
-    document.addEventListener("scroll", handleScroll);
-});
+    // Attach event listeners
+    document.addEventListener("scroll", handleVisibility);
+    window.addEventListener("load", handleVisibility);
+    window.addEventListener("resize", handleVisibility); // Ensure it works on viewport resize
+</script>
