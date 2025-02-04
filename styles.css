@@ -11,6 +11,45 @@ body {
     line-height: 1.6;
     color: #333;
 }
+/* Prevent double scroll bar */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* Ensure container does not exceed viewport height */
+.container {
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    margin: auto;
+    overflow: hidden; /* Prevents extra scrollbars */
+}
+
+/* Flashcard Styling */
+.card {
+    display: none;
+    position: absolute;
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+/* Ensures only one card is visible at a time */
+.card.active {
+    display: block;
+}
+
+/* Responsive Fix */
+@media (max-width: 600px) {
+    .navigation {
+        margin-top: 200px;
+    }
+}
 
 /* Rise Effect */
 @keyframes riseEffect {
