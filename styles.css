@@ -4,6 +4,40 @@ body, h1, h2, h3, p, ul, li, form, input, textarea {
     padding: 0;
     box-sizing: border-box;
 }
+.text-box {
+    background: rgba(255, 255, 255, 0.9); /* Light background for contrast */
+    padding: 20px;
+    border-radius: 10px; /* Smooth edges */
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    max-width: 600px; /* Adjust width */
+    margin: 20px auto; /* Centering */
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Smooth hover effect */
+.text-box:hover {
+    transform: translateY(-5px); /* Subtle lift effect */
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+}
+
+/* Styling for the Name */
+.text-box h1 span {
+    color: #8a2be2; /* Highlight color */
+    font-weight: bold;
+}
+
+/* Typography Enhancements */
+.text-box h1 {
+    font-size: 26px;
+    color: #333;
+}
+
+.text-box p {
+    font-size: 18px;
+    color: #555;
+}
+
 
 /* Prevent Double Scrollbar */
 html, body {
