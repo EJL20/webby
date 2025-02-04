@@ -190,6 +190,25 @@ function autoScrollToBottom() {
 // Run the auto-scroll effect when the page loads
 window.addEventListener("load", autoScrollToBottom);
 
+
+
+function autoScrollToBottom() {
+    setTimeout(() => {
+        // Smooth Scroll Effect
+        window.scrollTo({
+            top: window.innerHeight,
+            behavior: "smooth"
+        });
+
+        // Fade out the overlay to reveal the second image
+        setTimeout(() => {
+            document.querySelector(".overlay-transition").style.opacity = "0";
+        }, 1000); // Overlay fades out 1 second after scroll
+    }, 3000); // Initial delay before scrolling
+}
+
+window.addEventListener("load", autoScrollToBottom);
+
     </script>
 </body>
 </html>
