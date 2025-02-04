@@ -61,6 +61,7 @@
     height: 100vh;
     background: url('2.png') no-repeat center center;
     background-size: cover;
+opacity: 1; /* Make sure it's visible */
     z-index: 1; /* Lower than the top image */
 }
 
@@ -196,10 +197,9 @@ function autoScrollToBottom() {
 window.addEventListener("load", autoScrollToBottom);
 
 
-
 function autoScrollToBottom() {
     setTimeout(() => {
-        // Smooth Scroll Effect
+        // Smoothly scroll down
         window.scrollTo({
             top: window.innerHeight,
             behavior: "smooth"
@@ -207,12 +207,19 @@ function autoScrollToBottom() {
 
         // Fade out the overlay to reveal the second image
         setTimeout(() => {
-            document.querySelector(".overlay-transition").style.opacity = "0";
-        }, 1000); // Overlay fades out 1 second after scroll
-    }, 3000); // Initial delay before scrolling
+            let overlay = document.querySelector(".overlay-transition");
+            if (overlay) {
+                overlay.style.opacity = "0";
+                setTimeout(() => {
+                    overlay.style.display = "none"; // Hide it completely after fading
+                }, 1500);
+            }
+        }, 1000); // Delay fade effect after scrolling
+    }, 3000); // Initial delay before auto-scroll
 }
 
 window.addEventListener("load", autoScrollToBottom);
+
 
     </script>
 </body>
