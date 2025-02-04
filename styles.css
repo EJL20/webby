@@ -53,6 +53,24 @@ header nav ul li a {
     text-decoration: none;
     font-weight: bold;
 }
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #fde7ff; /* Background of the track */
+    border-radius: 10px; /* Rounded edges */
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #ff69b4, #8a2be2); /* Gradient thumb color */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #ff1493, #6a0dad); /* Darker on hover */
+}
 
 /* Main Content */
 main {
