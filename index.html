@@ -28,11 +28,11 @@
             padding: 0;
             display: flex;
             justify-content: center;
-            background: none;
             margin: 0;
             position: sticky;
             top: 0;
             z-index: 1000;
+            background: none; /* Remove dark blue background */
         }
         
         nav ul li {
@@ -41,19 +41,19 @@
 
         nav ul li a {
             text-decoration: none;
-            color: #ecf0f1;
+            color: white;
             font-size: 18px;
             font-weight: 700;
         }
 
         nav ul li a:hover {
-            color: #d3cce0;
+            color: #3498db;
         }
 
         /* Hero Section */
         .hero {
             padding: 100px 20px;
-            background: linear-gradient(135deg, #3498db, #9b59b6);
+            background: linear-gradient(135deg, #3498db, #9b59b6); /* Linear gradient will now extend all the way */
             color: white;
             text-align: center;
             position: relative;
