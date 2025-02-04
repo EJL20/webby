@@ -54,22 +54,30 @@ header nav ul li a {
     font-weight: bold;
 }
 /* Custom Scrollbar */
+/* Ensure scrollbar is visible */
+html, body {
+    overflow-y: scroll;
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #8a2be2 #fde7ff; /* For Firefox */
+}
+
+/* Custom Scrollbar for WebKit Browsers */
 ::-webkit-scrollbar {
-    width: 10px; /* Width of the scrollbar */
+    width: 10px; /* Adjust scrollbar width */
 }
 
 ::-webkit-scrollbar-track {
-    background: #fde7ff; /* Background of the track */
+    background: #fde7ff; /* Track color */
     border-radius: 10px; /* Rounded edges */
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, #ff69b4, #8a2be2); /* Gradient thumb color */
+    background: linear-gradient(to bottom, #ff69b4, #8a2be2); /* Gradient color */
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(to bottom, #ff1493, #6a0dad); /* Darker on hover */
+    background: linear-gradient(to bottom, #ff1493, #6a0dad); /* Hover effect */
 }
 
 /* Main Content */
