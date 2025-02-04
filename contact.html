@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jaida Lebron</title>
@@ -19,64 +19,49 @@
             height: 200vh; /* Adjusted for better scrolling */
         }
 
-        /* Top Image (1.png) */
-       /* Wrapper to ensure proper positioning */
-.wrapper {
-    position: relative;
-    width: 100%;
-    height: 200vh; /* Ensures scrolling */
-}
+        .background-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: url('1.png') no-repeat center center;
+            background-size: cover;
+            z-index: 2;
+        }
 
-/* Top Image (Clouds - 1.png) */
-.background-top {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: url('1.png') no-repeat center center;
-    background-size: cover;
-    z-index: 2;
-    opacity: 1; /* Keep fully visible */
-}
+        .blend-area {
+            position: absolute;
+            top: 95vh;
+            left: 0;
+            width: 100%;
+            height: 5vh;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 10%, rgba(253, 231, 255, 0.5) 90%);
+            z-index: 3;
+        }
 
-/* Blending Area - Smooth transition */
-.blend-area {
-    position: absolute;
-    top: 95vh; /* Start blending just before 2.png */
-    left: 0;
-    width: 100%;
-    height: 5vh; /* Creates a fade effect */
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 10%, rgba(253, 231, 255, 0.5) 90%);
-    z-index: 3;
-}
+        .background-bottom {
+            position: absolute;
+            top: 100vh;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: url('2.png') no-repeat center center;
+            background-size: cover;
+            z-index: 1;
+        }
 
-/* Bottom Image (2.png) */
-.background-bottom {
-    position: absolute;
-    top: 100vh; /* Immediately after blend */
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: url('2.png') no-repeat center center;
-    background-size: cover;
-    z-index: 1; /* Lower than the top image */
-}
+        .content {
+            position: absolute;
+            top: 120vh;
+            left: 10%;
+            width: 80%;
+            text-align: left;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            z-index: 4;
+        }
 
-/* Content Section */
-.content {
-    position: absolute;
-    top: 120vh; /* Ensure it appears after background */
-    left: 10%;
-    width: 80%;
-    text-align: left;
-    color: white;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-    z-index: 4;
-}
-
-
-        /* Rise Effect */
         @keyframes riseEffect {
             from {
                 opacity: 0;
@@ -133,18 +118,11 @@
 </head>
 <body>
     <div class="wrapper">
-        <!-- Top Image -->
         <div class="background-top"></div>
-
-        <!-- Blending Area -->
         <div class="blend-area"></div>
-
-        <!-- Bottom Image -->
         <div class="background-bottom"></div>
-
-        <!-- Content Section (Placed on 2.png) -->
         <div class="content">
-            <div class="rise-text"> <!-- Apply animation here -->
+            <div class="rise-text">
                 <h1 class="title">Hi, my name is 👋</h1>
                 <h2 class="title">Jaida Lebron</h2>
                 <p class="subtitle">
@@ -152,35 +130,34 @@
                     I’d be happy to connect with you!
                 </p>
             </div>
-
             <div class="button-container">
-                <div class="button-container">
-    <a href="https://github.com/EJL20/" class="button" target="_blank">GitHub</a>
-    <a href="https://www.linkedin.com/in/jaida-lebron/" class="button" target="_blank">LinkedIn</a>
-    <a href="https://drive.google.com/file/d/14tbsoaDctrTKQeVzu-IpsGaRGY7VxXkU/view" class="button" target="_blank">Resume</a>
-</div>
-
+                <a href="https://github.com/EJL20/" class="button" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/jaida-lebron/" class="button" target="_blank">LinkedIn</a>
+                <a href="https://drive.google.com/file/d/14tbsoaDctrTKQeVzu-IpsGaRGY7VxXkU/view" class="button" target="_blank">Resume</a>
+            </div>
         </div>
     </div>
 
     <script>
-        // Function to detect if element is in viewport
-        function isInViewport(element) {
-            const rect = element.getBoundingClientRect();
-            return rect.top < window.innerHeight && rect.bottom >= 0;
-        }
+        // Scroll smoothly to the second image
+        function smoothScrollToSecondImage() {
+            const secondImageTop = document.querySelector('.background-bottom').offsetTop;
 
-        function handleScroll() {
-            const riseText = document.querySelector('.rise-text');
-            if (isInViewport(riseText)) {
+            // Smooth scroll animation
+            window.scrollTo({
+                top: secondImageTop,
+                behavior: 'smooth',
+            });
+
+            // Trigger the rise effect after scrolling completes
+            setTimeout(() => {
+                const riseText = document.querySelector('.rise-text');
                 riseText.classList.add('visible');
-            }
+            }, 1000); // Delay for smooth scrolling
         }
 
-        // Listen for scroll event
-        document.addEventListener("scroll", handleScroll);
-        // Also trigger on page load in case it's already visible
-        window.addEventListener("load", handleScroll);
+        // Trigger smooth scroll and rise effect on page load
+        window.addEventListener('load', smoothScrollToSecondImage);
     </script>
 </body>
 </html>
