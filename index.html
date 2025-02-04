@@ -6,6 +6,14 @@
     <title>Jaida Lebron</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .card {
+            display: none; /* Hide all cards by default */
+        }
+        .card.active {
+            display: block; /* Show only the active card */
+        }
+    </style>
 </head>
 <body>
     <img src="Beige Simple Minimalistic Woman Avatar.png" alt="Logo" style="display: block; margin: auto; width: 150px; height: auto;">
@@ -45,31 +53,35 @@
                     <a href="#">View Source Code</a>
                 </div>
                 <div class="navigation">
-                    <button onclick="prevCard()">Previous</button>
-                    <button onclick="nextCard()">Next</button>
+                    <button id="prev">Previous</button>
+                    <button id="next">Next</button>
                 </div>
             </div>
         </div>
     </main>
     <script>
-        let currentCard = 0;
-        const cards = document.querySelectorAll('.card');
+        document.addEventListener("DOMContentLoaded", function () {
+            let currentCard = 0;
+            const cards = document.querySelectorAll('.card');
 
-        function showCard(index) {
-            cards.forEach((card, i) => {
-                card.classList.toggle('active', i === index);
+            function showCard(index) {
+                cards.forEach((card, i) => {
+                    card.classList.toggle('active', i === index);
+                });
+            }
+
+            document.getElementById("next").addEventListener("click", function () {
+                currentCard = (currentCard + 1) % cards.length;
+                showCard(currentCard);
             });
-        }
 
-        function nextCard() {
-            currentCard = (currentCard + 1) % cards.length;
-            showCard(currentCard);
-        }
+            document.getElementById("prev").addEventListener("click", function () {
+                currentCard = (currentCard - 1 + cards.length) % cards.length;
+                showCard(currentCard);
+            });
 
-        function prevCard() {
-            currentCard = (currentCard - 1 + cards.length) % cards.length;
-            showCard(currentCard);
-        }
+            showCard(currentCard); // Show the first card on load
+        });
     </script>
 </body>
 </html>
