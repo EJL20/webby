@@ -5,68 +5,19 @@ body, h1, h2, h3, p, ul, li, form, input, textarea {
     box-sizing: border-box;
 }
 
-/* Body */
+/* Prevent Double Scrollbar */
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+    overflow-y: auto;   /* Ensures natural scrolling */
+}
+
+/* Body Styling */
 body {
     font-family: 'Times New Roman', sans-serif;
     line-height: 1.6;
     color: #333;
-}
-/* Prevent double scroll bar */
-html, body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Prevents horizontal scrolling */
-}
-
-/* Ensure container does not exceed viewport height */
-.container {
-    position: relative;
-    width: 90%;
-    max-width: 400px;
-    margin: auto;
-    overflow: hidden; /* Prevents extra scrollbars */
-}
-
-/* Flashcard Styling */
-.card {
-    display: none;
-    position: absolute;
-    width: 100%;
-    padding: 15px;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    background: white;
-}
-
-/* Ensures only one card is visible at a time */
-.card.active {
-    display: block;
-}
-
-/* Responsive Fix */
-@media (max-width: 600px) {
-    .navigation {
-        margin-top: 200px;
-    }
-}
-
-/* Rise Effect */
-@keyframes riseEffect {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.rise-text {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: riseEffect 1s ease-out forwards;
+    background-color: #f9f9f9;
 }
 
 /* Header */
@@ -92,47 +43,97 @@ header nav ul li a {
     text-decoration: none;
     font-weight: bold;
 }
-/* Custom Scrollbar */
-/* Ensure scrollbar is visible */
-html, body {
-    overflow-y: scroll;
-    scrollbar-width: thin; /* For Firefox */
-    scrollbar-color: #8a2be2 #fde7ff; /* For Firefox */
-}
-
-/* Custom Scrollbar for WebKit Browsers */
-::-webkit-scrollbar {
-    width: 10px; /* Adjust scrollbar width */
-}
-
-::-webkit-scrollbar-track {
-    background: #fde7ff; /* Track color */
-    border-radius: 10px; /* Rounded edges */
-}
-
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, #ff69b4, #8a2be2); /* Gradient color */
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(to bottom, #ff1493, #6a0dad); /* Hover effect */
-}
 
 /* Main Content */
 main {
     padding: 20px;
 }
 
+/* Hero Section */
 .hero {
     background: #f4f4f4;
     padding: 20px;
     text-align: center;
 }
 
+/* Projects Section */
 .projects {
     padding: 20px;
     text-align: center;
+}
+
+/* Flashcard Container */
+.container {
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    margin: auto;
+    overflow: hidden; /* Prevents extra scrollbars */
+    text-align: center;
+}
+
+/* Flashcards */
+.card {
+    display: none;
+    position: absolute;
+    width: 100%;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 15px; /* Rounded edges */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    background: white;
+    transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Active Flashcard */
+.card.active {
+    display: block;
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Flashcard Image */
+.card img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 10px; /* Rounded edges for images */
+}
+
+/* Navigation Buttons */
+.navigation {
+    text-align: center;
+    margin-top: 250px; /* Prevents overlapping */
+}
+
+.navigation button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.navigation button:hover {
+    background-color: #0056b3;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fde7ff;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #ff69b4, #8a2be2);
+    border-radius: 10px;
 }
 
 /* Portfolio Slider */
@@ -195,16 +196,6 @@ form button {
     cursor: pointer;
 }
 
-/* Loader */
-.loader {
-    border: 16px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 16px solid #3498db;
-    width: 120px;
-    height: 120px;
-    animation: spin 2s linear infinite;
-}
-
 /* Scroll to Top Button */
 .scroll-to-top {
     position: fixed;
@@ -217,7 +208,7 @@ form button {
     padding: 10px;
     cursor: pointer;
     display: none;
-    z-index: 1000; /* Ensure it's above other content */
+    z-index: 1000;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -225,9 +216,31 @@ form button {
     background-color: #0056b3;
 }
 
+/* Rise Effect */
+@keyframes riseEffect {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.rise-text {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: riseEffect 1s ease-out forwards;
+}
+
 /* Responsive Design */
 @media only screen and (max-width: 600px) {
     .container {
         padding: 10px;
+    }
+
+    .navigation {
+        margin-top: 200px;
     }
 }
