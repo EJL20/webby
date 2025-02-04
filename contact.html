@@ -3,40 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canva Embed Example</title>
+    <title>Jaida Lebron - Canva Embed</title>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-        }
-        
-        .canva-container {
-            width: 80%;
-            max-width: 900px;
+            background: linear-gradient(to bottom, #ffd6e7, #fde7ff);
+            overflow-x: hidden;
+            text-align: center;
         }
 
-        iframe {
+        .canva-container {
+            position: relative;
             width: 100%;
-            height: 600px; /* Adjust height based on your design */
-            border: none; /* Removes border for a cleaner look */
+            height: 0;
+            padding-top: 56.2225%;
+            box-shadow: 0 2px 8px 0 rgba(63, 69, 81, 0.16);
+            margin-top: 1.6em;
+            margin-bottom: 0.9em;
+            overflow: hidden;
+            border-radius: 8px;
+            will-change: transform;
+        }
+
+        .canva-container iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .canva-link {
+            display: block;
+            font-size: 1rem;
+            color: #4b0082;
+            text-decoration: none;
+            margin-top: 1rem;
+        }
+
+        .canva-link:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-<div style="position: relative; width: 100%; height: 0; padding-top: 56.2225%;
- padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
- border-radius: 8px; will-change: transform;">
-  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-    src="https://www.canva.com/design/DAGeElTQOxM/aEdFGZRS1_nq8oKoEjsWUQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
-  </iframe>
-</div>
-<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGeElTQOxM&#x2F;aEdFGZRS1_nq8oKoEjsWUQ&#x2F;view?utm_content=DAGeElTQOxM&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">Education</a> by Jaida Lebron
+
+    <!-- Canva Embed -->
+    <div class="canva-container">
+        <iframe loading="lazy" 
+            src="https://www.canva.com/design/DAGeElTQOxM/aEdFGZRS1_nq8oKoEjsWUQ/view?embed" 
+            allowfullscreen="allowfullscreen" allow="fullscreen">
+        </iframe>
+    </div>
+
+    <!-- Link to Canva Design -->
+    <a href="https://www.canva.com/design/DAGeElTQOxM/aEdFGZRS1_nq8oKoEjsWUQ/view?utm_content=DAGeElTQOxM&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" 
+       target="_blank" rel="noopener" class="canva-link">
+        Education by Jaida Lebron
+    </a>
 
 </body>
 </html>
-
