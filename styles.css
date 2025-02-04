@@ -24,9 +24,6 @@ body {
     }
 }
 
-    }
-}
-
 .rise-text {
     opacity: 0;
     transform: translateY(30px);
@@ -73,4 +70,99 @@ main {
     text-align: center;
 }
 
-sec
+/* Portfolio Slider */
+.portfolio-slider {
+    position: relative;
+    text-align: center;
+}
+
+.slider-button {
+    position: absolute;
+    top: 10%;
+    transform: translateY(-50%);
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 50px;
+    cursor: pointer;
+}
+
+#prev {
+    left: 0;
+}
+
+#next {
+    right: 0;
+}
+
+/* Blog Post */
+article {
+    margin-bottom: 20px;
+}
+
+article h2 {
+    margin-top: 0;
+}
+
+/* Contact Form */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+}
+
+form button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Loader */
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    display: none;
+    z-index: 1000; /* Ensure it's above other content */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+}
