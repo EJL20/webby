@@ -7,15 +7,21 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <link rel="stylesheet" href="styles.css">
     <style>
+        .container {
+            position: relative;
+            width: 350px;
+            margin: auto;
+            text-align: center;
+        }
         .card {
             display: none; /* Hide all cards by default */
-            text-align: center;
-            border: 2px solid #ddd;
+            position: absolute;
+            width: 100%;
             padding: 20px;
+            border: 2px solid #ddd;
             border-radius: 10px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-            width: 300px;
-            margin: auto;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            background: white;
         }
         .card.active {
             display: block; /* Show only the active card */
@@ -28,7 +34,7 @@
         }
         .navigation {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 260px; /* Ensure buttons don't overlap the card */
         }
         .navigation button {
             padding: 10px 20px;
@@ -84,10 +90,10 @@
                     <p>Description of project 3.</p>
                     <a href="#">View Source Code</a>
                 </div>
-                <div class="navigation">
-                    <button id="prev">Previous</button>
-                    <button id="next">Next</button>
-                </div>
+            </div>
+            <div class="navigation">
+                <button id="prev">Previous</button>
+                <button id="next">Next</button>
             </div>
         </div>
     </main>
