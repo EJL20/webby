@@ -119,13 +119,16 @@
 </head>
 <body>
 
-<nav class="navbar">
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+<div class="side-nav" id="sideNav">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+        <a href="index.html">Home</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- Hamburger Icon -->
+    <span class="hamburger-icon" onclick="openNav()">&#9776;</span>
+
     <div class="wrapper">
         <div class="background-top"></div>
         <div class="blend-area"></div>
@@ -167,6 +170,15 @@
 
         // Trigger smooth scroll and rise effect on page load
         window.addEventListener('load', smoothScrollToSecondImage);
+
+function openNav() {
+            document.getElementById('sideNav').style.width = '250px';
+        }
+
+        // Close the side navigation
+        function closeNav() {
+            document.getElementById('sideNav').style.width = '0';
+        }
     </script>
 </body>
 </html>
