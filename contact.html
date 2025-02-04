@@ -116,7 +116,7 @@
             background-color: #6a0dad;
         }
 
- .hamburger-icon {
+        .hamburger-icon {
             font-size: 2rem;
             position: fixed;
             top: 16px;
@@ -125,10 +125,13 @@
             color: #4b0082;
             z-index: 11;
             transition: 0.3s;
-.hamburger-icon:hover {
+        }
+
+        .hamburger-icon:hover {
             color: #6a0dad;
-}
-.side-nav {
+        }
+
+        .side-nav {
             height: 100%; /* Full height */
             width: 0; /* Initially hidden */
             position: fixed; /* Fixed position */
@@ -140,7 +143,8 @@
             transition: 0.3s; /* Smooth open/close transition */
             padding-top: 60px; /* Add padding to top */
         }
-.side-nav a {
+
+        .side-nav a {
             padding: 8px 16px;
             text-decoration: none;
             font-size: 1.2rem;
@@ -165,16 +169,13 @@
     </style>
 </head>
 <body>
- <span class="hamburger-icon" onclick="openNav()">&#9776;</span>
-<div class="side-nav" id="sideNav">
+    <span class="hamburger-icon" onclick="openNav()">&#9776;</span>
+    <div class="side-nav" id="sideNav">
         <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
         <a href="index.html">Home</a>
         <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
     </div>
-
-  
-   
 
     <div class="wrapper">
         <div class="background-top"></div>
@@ -198,34 +199,30 @@
     </div>
 
     <script>
-        // Scroll smoothly to the second image
+        function openNav() {
+            document.getElementById('sideNav').style.width = '250px';
+        }
+
+        function closeNav() {
+            document.getElementById('sideNav').style.width = '0';
+        }
+
+        // Smooth scrolling and rise effect
         function smoothScrollToSecondImage() {
             const secondImageTop = document.querySelector('.background-bottom').offsetTop;
 
-            // Smooth scroll animation
             window.scrollTo({
                 top: secondImageTop,
                 behavior: 'smooth',
             });
 
-            // Trigger the rise effect after scrolling completes
             setTimeout(() => {
                 const riseText = document.querySelector('.rise-text');
                 riseText.classList.add('visible');
             }, 1000); // Delay for smooth scrolling
         }
 
-        // Trigger smooth scroll and rise effect on page load
         window.addEventListener('load', smoothScrollToSecondImage);
-
-function openNav() {
-            document.getElementById('sideNav').style.width = '250px';
-        }
-
-        // Close the side navigation
-        function closeNav() {
-            document.getElementById('sideNav').style.width = '0';
-        }
     </script>
 </body>
 </html>
