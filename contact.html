@@ -154,4 +154,21 @@
     <script>
         // Function to detect if element is in viewport
         function isInViewport(element) {
-         
+            const rect = element.getBoundingClientRect();
+            return rect.top < window.innerHeight && rect.bottom >= 0;
+        }
+
+        function handleScroll() {
+            const riseText = document.querySelector('.rise-text');
+            if (isInViewport(riseText)) {
+                riseText.classList.add('visible');
+            }
+        }
+
+        // Listen for scroll event
+        document.addEventListener("scroll", handleScroll);
+        // Also trigger on page load in case it's already visible
+        window.addEventListener("load", handleScroll);
+    </script>
+</body>
+</html>
