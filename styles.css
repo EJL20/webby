@@ -13,8 +13,6 @@ body, h1, h2, h3, p, ul, li, form, input, textarea {
     padding: 20px;
 }
 
-.background-top {
-    transition: opacity 10s ease-in-out;
 }
 
 /* Individual Blog Post */
