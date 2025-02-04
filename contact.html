@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jaida Lebron</title>
@@ -13,14 +13,13 @@
             overflow-x: hidden;
         }
 
-        /* Wrapper */
         .wrapper {
             position: relative;
             width: 100%;
-            height: 200vh; /* Ensures scrolling */
+            height: 200vh; /* Adjusted for better scrolling */
         }
 
-        /* Top Image (Clouds - 1.png) */
+        /* Top Image (1.png) */
         .background-top {
             position: absolute;
             top: 0;
@@ -30,58 +29,57 @@
             background: url('1.png') no-repeat center center;
             background-size: cover;
             z-index: 2;
+             opacity: 0.8; /* Adjust transparency for overlay effect */
         }
 
-        /* Overlay Transition (Fades out) */
-        .overlay-transition {
-            position: absolute;
-            top: 100vh; /* Covers bottom image */
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: url('1.png') no-repeat center center;
-            background-size: cover;
-            opacity: 1;
-            transition: opacity 1.5s ease-in-out;
-            z-index: 3;
-        }
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url('2.png') no-repeat center center;
+    background-size: cover;
+    z-index: 1; /* Lower than the top image */
 
-        /* Blending Area */
-        .blend-area {
-            position: absolute;
-            top: 95vh;
-            left: 0;
-            width: 100%;
-            height: 5vh;
-            background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 10%, rgba(253, 231, 255, 0.5) 90%);
-            z-index: 3;
-        }
+       
 
         /* Bottom Image (2.png) */
         .background-bottom {
             position: absolute;
-            top: 100vh;
+            top: 100vh; /* Immediately after blend */
             left: 0;
             width: 100%;
             height: 100vh;
             background: url('2.png') no-repeat center center;
             background-size: cover;
-            z-index: 1; /* Lower than overlay */
+            z-index: 3;
         }
 
-        /* Content */
+        /* Content on 2.png */
         .content {
             position: absolute;
-            top: 120vh;
-            left: 10%;
+            top: 120vh; /* Place it inside 2.png */
+            left: 10%; /* Aligning text to the left */
             width: 80%;
-            text-align: left;
-            color: white;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            text-align: left; /* Ensure all text is left-aligned */
+            color: white; /* Ensures text is readable on image */
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Add shadow for readability */
             z-index: 4;
         }
 
         /* Rise Effect */
+        @keyframes riseEffect {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         .rise-text {
             opacity: 0;
             transform: translateY(30px);
@@ -93,7 +91,16 @@
             transform: translateY(0);
         }
 
-        /* Buttons */
+        .title {
+            font-size: 2.5rem;
+            margin: 1rem 0;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            margin: 1rem 0;
+        }
+
         .button-container {
             display: flex;
             justify-content: left;
@@ -121,18 +128,15 @@
         <!-- Top Image -->
         <div class="background-top"></div>
 
-        <!-- Overlay -->
-        <div class="overlay-transition"></div>
-
         <!-- Blending Area -->
         <div class="blend-area"></div>
 
         <!-- Bottom Image -->
         <div class="background-bottom"></div>
 
-        <!-- Content Section -->
+        <!-- Content Section (Placed on 2.png) -->
         <div class="content">
-            <div class="rise-text">
+            <div class="rise-text"> <!-- Apply animation here -->
                 <h1 class="title">Hi, my name is 👋</h1>
                 <h2 class="title">Jaida Lebron</h2>
                 <p class="subtitle">
@@ -142,14 +146,17 @@
             </div>
 
             <div class="button-container">
-                <a href="https://github.com/EJL20/" class="button" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/in/jaida-lebron/" class="button" target="_blank">LinkedIn</a>
-                <a href="https://drive.google.com/file/d/14tbsoaDctrTKQeVzu-IpsGaRGY7VxXkU/view" class="button" target="_blank">Resume</a>
-            </div>
+                <div class="button-container">
+    <a href="https://github.com/EJL20/" class="button" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/jaida-lebron/" class="button" target="_blank">LinkedIn</a>
+    <a href="https://drive.google.com/file/d/14tbsoaDctrTKQeVzu-IpsGaRGY7VxXkU/view" class="button" target="_blank">Resume</a>
+</div>
+
         </div>
     </div>
 
     <script>
+        // Function to detect if element is in viewport
         function isInViewport(element) {
             const rect = element.getBoundingClientRect();
             return rect.top < window.innerHeight && rect.bottom >= 0;
@@ -162,31 +169,10 @@
             }
         }
 
+        // Listen for scroll event
         document.addEventListener("scroll", handleScroll);
+        // Also trigger on page load in case it's already visible
         window.addEventListener("load", handleScroll);
-
-        // Auto-scroll & Fade Overlay
-        function autoScrollToBottom() {
-            setTimeout(() => {
-                window.scrollTo({
-                    top: window.innerHeight,
-                    behavior: "smooth"
-                });
-
-                // Fade out overlay
-                setTimeout(() => {
-                    let overlay = document.querySelector(".overlay-transition");
-                    if (overlay) {
-                        overlay.style.opacity = "0";
-                        setTimeout(() => {
-                            overlay.style.display = "none"; // Remove it
-                        }, 1500);
-                    }
-                }, 1000);
-            }, 3000);
-        }
-
-        window.addEventListener("load", autoScrollToBottom);
     </script>
 </body>
 </html>
