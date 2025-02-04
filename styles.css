@@ -4,6 +4,17 @@ body, h1, h2, h3, p, ul, li, form, input, textarea {
     padding: 0;
     box-sizing: border-box;
 }
+.rise-text {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.rise-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /*start of second card
 /* Project Flashcard Styling */
 .card {
