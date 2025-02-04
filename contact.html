@@ -66,6 +66,29 @@
             z-index: 4;
         }
 
+        /* Rise Effect */
+        @keyframes riseEffect {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .rise-text {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .rise-text.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         .title {
             font-size: 2.5rem;
             margin: 1rem 0;
@@ -111,22 +134,24 @@
 
         <!-- Content Section (Placed on 2.png) -->
         <div class="content">
-    <div class="rise-text"> <!-- Apply animation here -->
-        <h1 class="title">Hi, my name is 👋</h1>
-        <h2 class="title">Jaida Lebron</h2>
-        <p class="subtitle">
-            I'm currently looking for full-time opportunities. If you'd like to get in touch, feel free to reach out.
-            I’d be happy to connect with you!
-        </p>
+            <div class="rise-text"> <!-- Apply animation here -->
+                <h1 class="title">Hi, my name is 👋</h1>
+                <h2 class="title">Jaida Lebron</h2>
+                <p class="subtitle">
+                    I'm currently looking for full-time opportunities. If you'd like to get in touch, feel free to reach out.
+                    I’d be happy to connect with you!
+                </p>
+            </div>
+
+            <div class="button-container">
+                <a href="#" class="button" target="_blank">🐙 GitHub</a>
+                <a href="#" class="button" target="_blank">🔗 LinkedIn</a>
+                <a href="#" class="button" target="_blank">📄 Resume</a>
+            </div>
+        </div>
     </div>
 
-    <div class="button-container">
-        <a href="#" class="button" target="_blank">🐙 GitHub</a>
-        <a href="#" class="button" target="_blank">🔗 LinkedIn</a>
-        <a href="#" class="button" target="_blank">📄 Resume</a>
-    </div>
-</div>
-
-    </div>
-</body>
-</html>
+    <script>
+        // Function to detect if element is in viewport
+        function isInViewport(element) {
+         
