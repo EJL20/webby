@@ -51,6 +51,31 @@ body, h1, h2, h3, p, ul, li, form, input, textarea {
 
 
 }
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    position: relative;
+    display: inline-block; /* To allow the pseudo-element to work */
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #3498db; /* Underline color */
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%; /* When hovered, underline will expand to full width */
+}
+
 /* Side Navigation */
 .side-nav {
     height: 100%; /* Full height */
