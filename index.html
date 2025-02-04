@@ -13,6 +13,13 @@
             text-align: center;
             background: #f7f7f7;
             color: #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #2c3e50;
+            color: #ecf0f1;
         }
 
         /* Navigation */
@@ -81,6 +88,21 @@
             padding-right: 5px;
             font-size: 3.5rem;
             font-family: 'Playfair Display', serif;
+        }
+
+        /* Moon Icon */
+        .moon-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #f1c40f;
+            transition: color 0.3s ease;
+        }
+
+        .moon-icon:hover {
+            color: #f39c12;
         }
 
         /* Project Flashcards */
@@ -241,6 +263,8 @@
         </section>
     </main>
 
+    <div class="moon-icon" id="moon-icon">&#127769;</div>
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             // Typing effect for "Jaida Lebron"
@@ -257,6 +281,13 @@
             }
 
             type();
+
+            // Dark mode toggle
+            const moonIcon = document.getElementById("moon-icon");
+            moonIcon.addEventListener("click", function () {
+                document.body.classList.toggle("dark-mode");
+                moonIcon.textContent = document.body.classList.contains("dark-mode") ? "🌙" : "🌕";
+            });
 
             // Project cards navigation (if necessary)
             let currentCard = 0;
