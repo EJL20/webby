@@ -4,6 +4,16 @@ body, h1, h2, h3, p, ul, li, form, input, textarea {
     padding: 0;
     box-sizing: border-box;
 }
+.blog-image {
+    width: 100%; /* Ensures image scales responsively */
+    max-width: 800px; /* Sets a reasonable max width */
+    height: auto; /* Maintains aspect ratio */
+    display: block;
+    margin: 20px auto; /* Centers image */
+    border-radius: 10px; /* Optional: adds rounded corners */
+}
+
+
 .rise-text {
     opacity: 0;
     transform: translateY(30px);
