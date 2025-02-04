@@ -74,6 +74,15 @@
             100% { opacity: 1; }
         }
 
+        /* Typing Effect */
+        .typing {
+            display: inline;
+            border-right: 3px solid white; /* Cursor effect */
+            padding-right: 5px;
+            font-size: 3.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+
         /* Project Flashcards */
         .projects {
             padding: 50px 20px;
@@ -196,7 +205,7 @@
     <main>
         <section class="hero">
             <div class="text-box">
-                <h1>Hey, I’m <span>Jaida</span> - A Software<br>Engineer from Virginia</h1>
+                <h1><span class="typing"></span></h1>
                 <p>Welcome to my digital garden. 🌱</p>
                 <p>A software engineer and UI/UX designer in Virginia. I create fun projects and share thoughts on code, design, and life.<br>In my free time, I love crocheting, painting, and gaming.</p>
             </div>
@@ -234,6 +243,22 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            // Typing effect for "Jaida Lebron"
+            const typingText = "Jaida Lebron";
+            let i = 0;
+            const typingElement = document.querySelector('.typing');
+            
+            function type() {
+                if (i < typingText.length) {
+                    typingElement.innerHTML += typingText.charAt(i);
+                    i++;
+                    setTimeout(type, 100);
+                }
+            }
+
+            type();
+
+            // Project cards navigation (if necessary)
             let currentCard = 0;
             const cards = document.querySelectorAll('.card');
 
