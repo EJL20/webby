@@ -15,7 +15,7 @@
         .wrapper {
             position: relative;
             width: 100%;
-            height: 200vh; /* Adjusted for two full sections */
+            height: 200vh; /* Adjusted for better scrolling */
         }
 
         /* Top Image (1.png) */
@@ -24,7 +24,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100vh; /* Full viewport height */
+            height: 100vh;
             background: url('1.png') no-repeat center center;
             background-size: cover;
             z-index: 1;
@@ -33,27 +33,27 @@
         /* Blending Area */
         .blend-area {
             position: absolute;
-            top: 95vh; /* Start blending before transition */
+            top: 95vh; /* Start blending just before 2.png */
             left: 0;
             width: 100%;
-            height: 5vh; /* Smooth transition height */
-          background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 20%, rgba(253, 231, 255, 0.3) 80%, rgba(253, 231, 255, 0));
+            height: 5vh; /* Subtle blending */
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 20%, rgba(253, 231, 255, 0.3) 80%, rgba(253, 231, 255, 0));
             z-index: 2;
         }
 
         /* Bottom Image (2.png) */
         .background-bottom {
             position: absolute;
-            top: 100vh; /* Start immediately after the blend area */
+            top: 100vh; /* Immediately after blend */
             left: 0;
             width: 100%;
-            height: 100vh; /* Full viewport height */
+            height: 100vh;
             background: url('2.png') no-repeat center center;
             background-size: cover;
             z-index: 3;
         }
 
-        /* Content Section */
+        /* Content on 2.png */
         .content {
             position: absolute;
             top: 120vh; /* Place it inside 2.png */
@@ -68,13 +68,11 @@
 
         .title {
             font-size: 2.5rem;
-            color: #4b0082;
             margin: 1rem 0;
         }
 
         .subtitle {
             font-size: 1.2rem;
-            color: #6a0dad;
             margin: 1rem 0;
         }
 
@@ -111,7 +109,7 @@
         <!-- Bottom Image -->
         <div class="background-bottom"></div>
 
-        <!-- Content Section -->
+        <!-- Content Section (Placed on 2.png) -->
         <div class="content">
             <h1 class="title">Hi, my name is 👋</h1>
             <h2 class="title">Jaida Lebron</h2>
