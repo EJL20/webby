@@ -11,3 +11,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
   riseElements.forEach((el) => observer.observe(el));
 });
+document.addEventListener("DOMContentLoaded", function () {
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return rect.top < window.innerHeight && rect.bottom >= 0;
+    }
+
+    function handleScroll() {
+        const riseText = document.querySelector('.rise-text');
+        if (riseText && isInViewport(riseText)) {
+            riseText.classList.add('visible');
+        }
+    }
+
+    // Trigger on load in case the element is already in view
+    handleScroll();
+
+    // Listen for scroll event
+    document.addEventListener("scroll", handleScroll);
+});
