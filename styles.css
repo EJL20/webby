@@ -38,7 +38,18 @@ body, h1, h2, h3, p, ul, li, form, input, textarea {
     color: #555;
 }
 
+/* Remove default underline and blue color from navigation links */
+nav ul li a {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Keeps text color consistent */
+}
 
+/* Optional: Change link color on hover */
+nav ul li a:hover {
+    color: #8a2be2; /* Adjust color to match your design */
+    text-decoration: none;
+}
+/*end
 /* Prevent Double Scrollbar */
 html, body {
     width: 100%;
