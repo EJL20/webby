@@ -3,100 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Flashcards</title>
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: linear-gradient(to right, #f4f4f4, #eaeaea);
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            position: relative;
-            width: 90%;
-            max-width: 400px;
-            text-align: center;
-        }
-        .card {
-            display: none;
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease-in-out;
-        }
-        .card.active {
-            display: block;
-            transform: scale(1.05);
-        }
-        .navigation {
-            margin-top: 20px;
-            display: flex;
-            justify-content: space-between;
-        }
-        button {
-            padding: 12px;
-            border: none;
-            background: #007bff;
-            color: white;
-            cursor: pointer;
-            border-radius: 8px;
-            transition: background 0.3s;
-            font-size: 16px;
-            width: 48%;
-        }
-        button:hover {
-            background: #0056b3;
-        }
-        a {
-            display: inline-block;
-            margin-top: 10px;
-            color: #007bff;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        a:hover {
-            color: #0056b3;
-        }
-        @media (max-width: 600px) {
-            .container {
-                width: 95%;
-            }
-            button {
-                font-size: 14px;
-                padding: 10px;
-            }
-        }
-    </style>
+    <title>Jaida Lebron</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="card active">
-            <h2>Project 1</h2>
-            <p>Description of project 1.</p>
-            <a href="#">View Source Code</a>
+    <img src="Beige Simple Minimalistic Woman Avatar.png" alt="Logo" style="display: block; margin: auto; width: 150px; height: auto;">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="text-box">
+                <h1>Hey, I’m <span>Jaida</span> - A Software<br>Engineer from Virginia</h1>
+                <p>Welcome to my digital garden. 🌱</p>
+                <p>A software engineer and UI/UX designer in Virginia. I make projects and<br>have a blog about code, design, and life.<br>I like crocheting, painting, and gaming.</p>
+            </div>
+        </section>
+        <div class="projects">
+            <h2>Projects</h2>
+            <div class="container">
+                <div class="card active">
+                    <h2>Project 1</h2>
+                    <p>Description of project 1.</p>
+                    <a href="#">View Source Code</a>
+                </div>
+                <div class="card">
+                    <h2>Project 2</h2>
+                    <p>Description of project 2.</p>
+                    <a href="#">View Source Code</a>
+                </div>
+                <div class="card">
+                    <h2>Project 3</h2>
+                    <p>Description of project 3.</p>
+                    <a href="#">View Source Code</a>
+                </div>
+                <div class="navigation">
+                    <button onclick="prevCard()">Previous</button>
+                    <button onclick="nextCard()">Next</button>
+                </div>
+            </div>
         </div>
-        <div class="card">
-            <h2>Project 2</h2>
-            <p>Description of project 2.</p>
-            <a href="#">View Source Code</a>
-        </div>
-        <div class="card">
-            <h2>Project 3</h2>
-            <p>Description of project 3.</p>
-            <a href="#">View Source Code</a>
-        </div>
-        <div class="navigation">
-            <button onclick="prevCard()">Previous</button>
-            <button onclick="nextCard()">Next</button>
-        </div>
-    </div>
-    
+    </main>
     <script>
         let currentCard = 0;
         const cards = document.querySelectorAll('.card');
