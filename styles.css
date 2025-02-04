@@ -51,6 +51,58 @@ body, h1, h2, h3, p, ul, li, form, input, textarea {
 
 
 }
+/* Side Navigation */
+.side-nav {
+    height: 100%; /* Full height */
+    width: 0; /* Initially hidden */
+    position: fixed; /* Fixed position */
+    z-index: 10; /* Above everything else */
+    top: 0;
+    left: 0;
+    background-color: #4b0082; /* Background color */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.3s; /* Smooth open/close transition */
+    padding-top: 60px; /* Add padding to top */
+}
+
+.side-nav a {
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.side-nav a:hover {
+    background-color: #6a0dad;
+}
+
+/* Close Button */
+.side-nav .close-btn {
+    position: absolute;
+    top: 0;
+    right: 16px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Hamburger Icon */
+.hamburger-icon {
+    font-size: 2rem;
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    cursor: pointer;
+    color: #4b0082;
+    z-index: 11;
+    transition: 0.3s;
+}
+
+.hamburger-icon:hover {
+    color: #6a0dad;
+}
 
 /* Individual Blog Post */
 .blog-post {
