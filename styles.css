@@ -13,19 +13,7 @@ body, h1, h2, h3, p, ul, li, form, input, textarea {
     padding: 20px;
 }
 
-/* Overlay Effect */
-.overlay-transition {
-    position: absolute;
-    top: 100vh; /* Cover bottom image at start */
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: url('1.png') no-repeat center center;
-    background-size: cover;
-    opacity: 1; /* Fully visible initially */
-    transition: opacity 1.5s ease-in-out;
-    z-index: 3; /* Above background-bottom but below text */
-    pointer-events: none; /* Ensures clicks go through */
+
 }
 
 /* Individual Blog Post */
