@@ -1,52 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-<link rel="icon" href="favicon.ico" type="image/x-icon">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jaida Lebron</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: white;
+        }
+        .container {
+            position: relative;
+            width: 350px;
+            text-align: center;
+        }
+        .card {
+            display: none;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+        .card.active {
+            display: block;
+            transform: scale(1.05);
+        }
+        .navigation {
+            margin-top: 20px;
+        }
+        button {
+            padding: 12px;
+            margin: 5px;
+            border: none;
+            background: #ff6b81;
+            color: white;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background 0.3s;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #e63946;
+        }
+        a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
 </head>
-<img src="Beige Simple Minimalistic Woman Avatar.png" alt="Logo" style="display: block; margin: auto; width: 150px; height: auto;">
-
+<body>
+    <img src="Beige Simple Minimalistic Woman Avatar.png" alt="Logo" style="display: block; margin: auto; width: 150px; height: auto;">
     <header>
         <nav>
-         <ul>
+            <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
-
-                
             </ul>
         </nav>
     </header>
     <main>
         <section class="hero">
-
-         <div class="text-box">
-             <h1>Hey, I’m <span>Jaida</span> - A Software
-<br>Engineer from Virginia</h1>
-             <p1>Welcome to my digital garden. 🌱</p1>
-                 
-            <p2>    <br> A software enigneer and UI/UX designer in Virginia. I make projects and
-                 <br>have a blog about code, design, and life.
-                 <br> I like crocheting, painting, and gaming.
-            </p2>
-         </div>
+            <div class="text-box">
+                <h1>Hey, I’m <span>Jaida</span> - A Software<br>Engineer from Virginia</h1>
+                <p1>Welcome to my digital garden. 🌱</p1>
+                <p2><br>A software engineer and UI/UX designer in Virginia. I make projects and
+                    <br>have a blog about code, design, and life.
+                    <br>I like crocheting, painting, and gaming.
+                </p2>
+            </div>
         </section>
-
-<div class="projects">
-      
-            <h2>Projects</h2>
-  <p Coming Soon /p>
-`  </div>
     </main>
+    <div class="container">
+        <div class="card active">
+            <h2>Project 1</h2>
+            <p>Description of project 1.</p>
+            <a href="#">View Source Code</a>
+        </div>
+        <div class="card">
+            <h2>Project 2</h2>
+            <p>Description of project 2.</p>
+            <a href="#">View Source Code</a>
+        </div>
+        <div class="card">
+            <h2>Project 3</h2>
+            <p>Description of project 3.</p>
+            <a href="#">View Source Code</a>
+        </div>
+        <div class="navigation">
+            <button onclick="prevCard()">Previous</button>
+            <button onclick="nextCard()">Next</button>
+        </div>
+    </div>
+    <script>
+        let currentCard = 0;
+        const cards = document.querySelectorAll('.card');
 
+        function showCard(index) {
+            cards.forEach((card, i) => {
+                card.classList.toggle('active', i === index);
+            });
+        }
 
+        function nextCard() {
+            currentCard = (currentCard + 1) % cards.length;
+            showCard(currentCard);
+        }
 
-   
-   
-    <script src="script.js"></script>
+        function prevCard() {
+            currentCard = (currentCard - 1 + cards.length) % cards.length;
+            showCard(currentCard);
+        }
+    </script>
 </body>
 </html>
