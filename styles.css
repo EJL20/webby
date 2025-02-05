@@ -639,6 +639,32 @@ form button {
     background-color: #0056b3;
 }
 
+/* Ensure Consistent Scrollbar Across All Pages */
+html, body {
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #ff69b4 #fde7ff; /* Thumb and track color */
+}
+
+/* WebKit-based Browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fde7ff; /* Light track color */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #ff69b4, #8a2be2); /* Gradient scrollbar */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #ff1493, #6a0dad); /* Darker on hover */
+}
+
+
 /* Rise Effect */
 @keyframes riseEffect {
     from {
