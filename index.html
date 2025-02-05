@@ -89,15 +89,24 @@ nav ul li a:hover {
             100% { opacity: 1; }
         }
 
-        /* Typing Effect */
-        .typing {
-            display: inline;
-            border-right: 3px solid white; /* Cursor effect */
-            padding-right: 5px;
-            font-size: 3.5rem;
-            font-family: 'Playfair Display', serif;
-             animation: blink-caret 0.75s step-end infinite;
-        }
+   
+      /* Typing Effect */
+.typing {
+    display: inline;
+    border-right: 3px solid white; /* Cursor effect */
+    padding-right: 5px;
+    font-size: 3.5rem;
+    font-family: 'Playfair Display', serif;
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+/* Cursor Blinking Animation */
+@keyframes blink-caret {
+    50% {
+        border-color: transparent;
+    }
+}
+
 
         /* Moon Icon */
        /* Moon Icon - Ensure it's on top of navigation */
