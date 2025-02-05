@@ -4,6 +4,22 @@ body, h1, h2, h3, p, ul, li, form, input, textarea {
     padding: 0;
     box-sizing: border-box;
 }
+
+.moon-icon {
+    position: fixed;
+    top: 16px;
+    right: 60px; /* Adjust to avoid overlap with the hamburger menu */
+    font-size: 2rem;
+    cursor: pointer;
+    color: #f1c40f;
+    transition: color 0.3s ease;
+    z-index: 1300; /* Ensure it is above all elements */
+}
+
+.moon-icon:hover {
+    color: #f39c12;
+}
+
 /* Blog Container */
 .blog-container {
     display: flex;
