@@ -22,6 +22,7 @@
     <style>
 /* Blog Page Styles - Matches Index Page */
 /* Remove pink under nav and match index styles */
+/* Blog Page Styles - Matches Index Page */
 /* Remove pink under nav and match index styles */
 body {
     font-family: 'Roboto', sans-serif;
@@ -41,9 +42,10 @@ body.dark-mode {
 
 /* Navigation */
 nav {
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 1000;
+    width: 100%;
+    z-index: 1050;
     background: linear-gradient(135deg, #3498db, #9b59b6);
     padding: 10px 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -77,6 +79,8 @@ nav ul li a:hover {
 header {
     margin-bottom: 0;
     padding-bottom: 0;
+    position: relative;
+    z-index: 1050;
 }
 
 /* Blog Page Styling */
@@ -86,6 +90,7 @@ header {
     align-items: center;
     gap: 20px;
     padding: 20px;
+    margin-top: 60px; /* Ensures content does not overlap nav */
 }
 
 .blog-post {
@@ -169,7 +174,6 @@ body.dark-mode .blog-content p {
 .moon-icon:hover {
     color: #f39c12;
 }
-
 
 </style>
     <main>
