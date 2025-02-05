@@ -12,6 +12,17 @@
             riseText.classList.add('visible');
         }
     }
+//sidenav bar contact page
+
+function openNav() {
+    document.getElementById('sideNav').style.right = '0'; // Open from the right
+}
+
+function closeNav() {
+    document.getElementById('sideNav').style.right = '-250px'; // Hide it back to the right
+}
+
+
 
     // Attach event listeners
     document.addEventListener("scroll", handleVisibility);
