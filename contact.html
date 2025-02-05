@@ -6,240 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jaida Lebron</title>
     <style>
-
-@keyframes cloudAnimation {
-  0% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-}
-
-.cloud {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('clouds.png') repeat-x;
-  animation: cloudAnimation 10s linear infinite;
-}
-
-
-        body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            background: linear-gradient(to bottom, #ffd6e7, #fde7ff);
-            overflow-x: hidden;
-        }
-
-        .wrapper {
-            position: relative;
-            width: 100%;
-            height: 200vh; /* Adjusted for better scrolling */
-        }
-
-        .background-top {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 75vh;
-            background: url('1.png') no-repeat center center;
-            background-size: cover;
-            z-index: 2;
-        }
-
-        .blend-area {
-            position: absolute;
-            top: 70vh;
-            left: 0;
-            width: 100%;
-            height: 10vh;
-            background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 10%, rgba(253, 231, 255, 0.5) 90%);
-            z-index: 3;
-        }
-
-        .background-bottom {
-        position: absolute;
-        top: 80vh;
-        left: 0;
-        width: 100%;
-        height:height: calc(100vh - 80vh); /* Ensures 2.png covers the entire remaining screen */
-        background: url('2.png') no-repeat center center;
-        background-size: cover;
-        z-index: 1;
-}
-
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-    width: 8px; /* Reduce width */
-}
-
-::-webkit-scrollbar-track {
-    background: transparent; /* Remove extra background */
-    margin: 0px; /* Ensure no extra spacing */
-}
-
-::-webkit-scrollbar-thumb {
-    background: #888; /* Keep scrollbar visible */
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Darker on hover */
-}
-
-/* Ensure no extra space around the scrollbar */
-html, body {
-    overflow-y: auto; /* Prevent forced scrollbars */
-    overflow-x: hidden; /* Avoid horizontal scrolling */
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
-
-        .content {
-            position: absolute;
-            top: 120vh;
-            left: 10%;
-            width: 80%;
-            text-align: left;
-            color: white;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-            z-index: 4;
-            margin-top: 20px; /* Adjust this value as needed */
-            padding-top: 20px; /* Adjust this value as needed */
-        }
-
-        @keyframes riseEffect {
-            from {
-                opacity: 0;
-                transform: translateY(100px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .rise-text {
-            opacity: 0;
-            transform: translateY(100px); /* Match the starting position in the animation */
-            transition: opacity 1.5s cubic-bezier(0.22, 1, 0.36, 1), 
-                transform 1.5s cubic-bezier(0.22, 1, 0.36, 1); 
-        }
-
-        .rise-text.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .title {
-            font-size: 2.5rem;
-            margin: 1rem 0;
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            margin: 1rem 0;
-        }
-
-        .button-container {
-            display: flex;
-            justify-content: left;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .button {
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            font-size: 1rem;
-            border-radius: 0.5rem;
-            color: white;
-            background-color: #4b0082;
-            transition: background-color 0.3s;
-        }
-
-        .button:hover {
-            background-color: #6a0dad;
-        }
-
-        .hamburger-icon {
-    font-size: 2rem;
-    position: right;
-    top: 16px;
-    right: 16px; /* Move it to the top-right */
-    cursor: pointer;
-    color: #4b0082;
-    z-index: 1200; /* Ensure it stays above other elements */
-    transition: 0.3s;
-}
-
-.hamburger-icon:hover {
-    color: #6a0dad;
-}
-
-        
-.side-nav {
-    height: 100%;
-    width: 250px; /* Set a fixed width */
-    position: fixed; /* Keep it fixed */
-    z-index: 10;
-    top: 0;
-    right: -250px; /* Start hidden on the right */
-    background-color: #4b0082;
-    overflow-x: hidden;
-    transition: right 0.4s ease-in-out; /* Animate from right */
-    padding-top: 60px;
-}
-        .side-nav a {
-            padding: 8px 16px;
-            text-decoration: none;
-            font-size: 1.2rem;
-            color: white;
-            display: block;
-            transition: 0.3s;
-        }
-
-        .side-nav a:hover {
-            background-color: #6a0dad;
-        }
-
-      
-
-/* Close Button Position */
-.side-nav .close-btn {
-    position: absolute;
-    top: 10px; /* Adjust top spacing */
-    left: 16px; /* Align properly to the right */
-    font-size: 2rem;
-    color: white;
-    cursor: pointer;
-    z-index: 1001; /* Ensure it's above everything in the side-nav */
-}
-
-.content {
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-.content.visible {
-  opacity: 1;
-}
-
-
+        /* Your existing CSS styles */
     </style>
 </head>
 <body>
-
-
-
     <span class="hamburger-icon" onclick="openNav()">&#9776;</span>
     <div class="side-nav" id="sideNav">
         <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
@@ -252,7 +22,6 @@ html, body {
         <div class="background-top"></div>
         <div class="blend-area"></div>
         <div class="background-bottom"></div>
-<div class="cloud"></div>
         <div class="content">
             <div class="rise-text">
                 <h1 class="title">Hi, my name is 👋</h1>
@@ -272,12 +41,12 @@ html, body {
 
     <script>
         function openNav() {
-    document.getElementById('sideNav').style.right = '0'; // Open from the right
-}
+            document.getElementById('sideNav').style.right = '0'; // Open from the right
+        }
 
-function closeNav() {
-    document.getElementById('sideNav').style.right = '-250px'; // Hide it back to the right
-}
+        function closeNav() {
+            document.getElementById('sideNav').style.right = '-250px'; // Hide it back to the right
+        }
 
         // Smooth scrolling and rise effect
         function smoothScrollToSecondImage() {
@@ -295,16 +64,6 @@ function closeNav() {
         }
 
         window.addEventListener('load', smoothScrollToSecondImage);
-
-document.addEventListener("DOMContentLoaded", function() {
-        const cloudOverlay = document.getElementById('cloud-overlay');
-        setTimeout(() => {
-            cloudOverlay.style.opacity = '0';
-            cloudOverlay.addEventListener('transitionend', () => {
-                cloudOverlay.style.display = 'none';
-            });
-        }, 1000); // Delay before fade-out starts (in milliseconds)
-    });
     </script>
 </body>
 </html>
