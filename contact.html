@@ -158,15 +158,19 @@
             background-color: #6a0dad;
         }
 
-        /* Close Button */
-        .side-nav .close-btn {
-            position: absolute;
-            top: 0;
-            right: 16px;
-            font-size: 2rem;
-            color: white;
-            cursor: pointer;
-        }
+      
+
+/* Close Button Position */
+.side-nav .close-btn {
+    position: absolute;
+    top: 10px; /* Adjust top spacing */
+    right: 16px; /* Align properly to the right */
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it's above everything in the side-nav */
+}
+
     </style>
 </head>
 <body>
