@@ -184,6 +184,32 @@ body.dark-mode .blog-content p {
     color: #f39c12;
 }
 
+/* Custom Scrollbar for consistency */
+::-webkit-scrollbar {
+    width: 10px; /* Adjust width */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Track color */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; /* Scrollbar handle */
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Darker on hover */
+}
+
+/* Ensure overflow behavior is consistent */
+html, body {
+    overflow-y: scroll; /* Ensure vertical scrollbar appears always */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    height: 100%; /* Ensure full height */
+    margin: 0;
+    padding: 0;
+}
 
 </style>
     <main>
