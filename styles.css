@@ -5,20 +5,45 @@ body, h1, h2, h3, p, ul, li, form, input, textarea {
     box-sizing: border-box;
 }
 
+/* Moon Icon for Dark Mode Toggle */
 .moon-icon {
     position: fixed;
     top: 16px;
-    right: 60px; /* Adjust to avoid overlap with the hamburger menu */
+    right: 60px; /* Adjust position if needed */
     font-size: 2rem;
     cursor: pointer;
     color: #f1c40f;
     transition: color 0.3s ease;
-    z-index: 1300; /* Ensure it is above all elements */
+    z-index: 1300; /* Ensure it's above everything */
 }
 
 .moon-icon:hover {
     color: #f39c12;
 }
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+}
+
+body.dark-mode .blog-post {
+    background: #34495e;
+    color: white;
+}
+
+body.dark-mode .blog-content h2 a {
+    color: #ecf0f1;
+}
+
+body.dark-mode .blog-content h5 {
+    color: #bdc3c7;
+}
+
+body.dark-mode .blog-content p {
+    color: #ecf0f1;
+}
+
 
 /* Blog Container */
 .blog-container {
