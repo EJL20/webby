@@ -133,7 +133,18 @@
 }
 
         
-
+.side-nav {
+    height: 100%;
+    width: 250px; /* Set a fixed width */
+    position: fixed; /* Keep it fixed */
+    z-index: 10;
+    top: 0;
+    right: -250px; /* Start hidden on the right */
+    background-color: #4b0082;
+    overflow-x: hidden;
+    transition: right 0.4s ease-in-out; /* Animate from right */
+    padding-top: 60px;
+}
         .side-nav a {
             padding: 8px 16px;
             text-decoration: none;
