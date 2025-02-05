@@ -132,18 +132,19 @@ nav ul li a:hover::after {
 /* Hamburger Icon */
 .hamburger-icon {
     font-size: 2rem;
-    position: fixed;
+    position: fixed; /* Fix it to the top-right */
     top: 16px;
-    left: 16px;
+    right: 16px; /* Moves it to the right corner */
     cursor: pointer;
     color: #4b0082;
-    z-index: 11;
-    transition: 0.3s;
+    z-index: 1300; /* Ensure it's above all other elements */
+    transition: color 0.3s ease;
 }
 
 .hamburger-icon:hover {
     color: #6a0dad;
 }
+
 
 /* Individual Blog Post */
 .blog-post {
