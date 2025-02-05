@@ -8,10 +8,9 @@
 </head>
 <body>
     <header>
-<div class="moon-icon" id="moon-icon">🌙</div>
+        <div class="moon-icon" id="moon-icon">🌙</div>
 
         <nav>
-            
             <link rel="icon" type="image" href="jaidaphoto.png">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -19,176 +18,10 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-
     </header>
-    <style>
-/* Ensure "Blog" heading is visible below the nav */
-main h1 {
-    margin-top: 100px; /* Pushes the "Blog" heading down */
-    font-size: 2.5rem; /* Ensures it stays prominent */
-    color: #2c3e50; /* Matches the theme */
-}
 
-/* Blog Page Styles - Matches Index Page */
-/* Remove pink under nav and match index styles */
-/* Blog Page Styles - Matches Index Page */
-/* Remove pink under nav and match index styles */
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    background: #f7f7f7;
-    color: #333;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-/* Dark Mode Styles */
-body.dark-mode {
-    background-color: #2c3e50;
-    color: #ecf0f1;
-}
-
-/* Navigation */
-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1050;
-    background: linear-gradient(135deg, #3498db, #9b59b6);
-    padding: 10px 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 15px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    font-weight: 700;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #f1c40f;
-}
-
-/* Remove any extra spacing or background below nav */
-header {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    position: relative;
-    z-index: 1050;
-}
-
-/* Blog Page Styling */
-.blog-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
-    margin-top: 60px; /* Ensures content does not overlap nav */
-}
-
-.blog-post {
-    display: flex;
-    align-items: center;
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 800px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.blog-post:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-.blog-image {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-right: 20px;
-}
-
-.blog-content {
-    text-align: left;
-}
-
-.blog-content h2 a {
-    color: #2c3e50;
-    text-decoration: none;
-}
-
-.blog-content h2 a:hover {
-    color: #3498db;
-}
-
-.blog-content h5 {
-    color: #7f8c8d;
-    font-weight: normal;
-}
-
-.blog-content p {
-    font-size: 1rem;
-    color: #333;
-}
-
-/* Dark Mode Adjustments */
-body.dark-mode .blog-post {
-    background: #34495e;
-    color: white;
-}
-
-body.dark-mode .blog-content h2 a {
-    color: #ecf0f1;
-}
-
-body.dark-mode .blog-content h5 {
-    color: #bdc3c7;
-}
-
-body.dark-mode .blog-content p {
-    color: #ecf0f1;
-}
-
-/* Moon Icon for Dark Mode Toggle */
-.moon-icon {
-    position: fixed;
-    top: 16px;
-    right: 60px; /* Adjust to avoid overlap with the hamburger menu */
-    font-size: 2rem;
-    cursor: pointer;
-    color: #f1c40f;
-    transition: color 0.3s ease;
-    z-index: 1300; /* Ensure it is above all elements */
-}
-
-.moon-icon:hover {
-    color: #f39c12;
-}
-
-
-</style>
     <main>
         <h1>Blog</h1>
-
         <section class="blog-container">
             <!-- Blog Post 1 -->
             <article class="blog-post">
@@ -227,30 +60,39 @@ body.dark-mode .blog-content p {
             </article>
         </section>
     </main>
-    
-<div class="moon-icon" id="moon-icon">&#127769;</div> 
-<script>
-   // Dark mode toggle
-            const moonIcon = document.getElementById("moon-icon");
-            moonIcon.addEventListener("click", function () {
-                document.body.classList.toggle("dark-mode");
-                moonIcon.textContent = document.body.classList.contains("dark-mode") ? "🌙" : "🌕";
 
-        // Check if dark mode was previously enabled
+    <div class="moon-icon" id="moon-icon">🌙</div>
+
+    <script>
+        // Dark mode toggle
+        const moonIcon = document.getElementById("moon-icon");
+
+        // Check if dark mode was previously enabled and set it on load
         if (localStorage.getItem("dark-mode") === "enabled") {
             document.body.classList.add("dark-mode");
+            moonIcon.textContent = "🌕"; // Update the moon icon to the sun
+        } else {
+            document.body.classList.remove("dark-mode");
+            moonIcon.textContent = "🌙"; // Default moon icon
         }
 
+        moonIcon.addEventListener("click", function () {
+            document.body.classList.toggle("dark-mode");
 
-            // Store user preference
+            // Toggle the moon/sun icon based on the theme
+            if (document.body.classList.contains("dark-mode")) {
+                moonIcon.textContent = "🌕"; // Sun icon for dark mode
+            } else {
+                moonIcon.textContent = "🌙"; // Moon icon for light mode
+            }
+
+            // Store user preference in localStorage
             if (document.body.classList.contains("dark-mode")) {
                 localStorage.setItem("dark-mode", "enabled");
             } else {
                 localStorage.setItem("dark-mode", "disabled");
             }
         });
-    });
-</script>
-
+    </script>
 </body>
 </html>
