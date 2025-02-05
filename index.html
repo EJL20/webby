@@ -363,6 +363,33 @@ body.dark-mode .projects h2 {
 
             showCard(currentCard); // Show the first card on load
         });
+
+//scroll bar graident as i scroll function
+
+document.addEventListener("scroll", function() {
+    const scrollTop = document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollFraction = scrollTop / scrollHeight;
+
+    // Define the start and end colors of the gradient
+    const startColor = [52, 152, 219]; // RGB for #3498db
+    const endColor = [155, 89, 182];   // RGB for #9b59b6
+
+    // Calculate the current color based on scroll position
+    const currentColor = startColor.map((start, index) => {
+        const end = endColor[index];
+        return Math.round(start + (end - start) * scrollFraction);
+    });
+
+    // Convert RGB to hex
+    const currentColorHex = `#${currentColor.map(c => c.toString(16).padStart(2, '0')).join('')}`;
+
+    // Apply the new gradient to the scrollbar thumb
+    document.styleSheets[0].insertRule(
+        `::-webkit-scrollbar-thumb { background: ${currentColorHex}; }`,
+        document.styleSheets[0].cssRules.length
+    );
+});
     </script>
 </body>
 </html>
