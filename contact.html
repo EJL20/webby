@@ -41,15 +41,16 @@
         }
 
         .background-bottom {
-            position: absolute;
-            top: 80vh;
-            left: 0;
-            width: 100%;
-            height: calc(100vh - 80vh)
-            background: url('2.png') no-repeat center center;
-            background-size: cover;
-            z-index: 1;
-        }
+        position: absolute;
+        top: 80vh;
+        left: 0;
+        width: 100%;
+        height:height: calc(100vh - 80vh); /* Ensures 2.png covers the entire remaining screen */
+        background: url('2.png') no-repeat center center;
+        background-size: cover;
+        z-index: 1;
+}
+
 
         .content {
             position: absolute;
