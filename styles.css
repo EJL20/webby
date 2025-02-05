@@ -22,27 +22,24 @@ body, h1, h2, h3, p, ul, li, form, input, textarea {
 }
 
 /* Dark Mode Styles */
+/* Dark Mode General Styles */
 body.dark-mode {
     background-color: #2c3e50;
     color: #ecf0f1;
 }
 
+/* Keep Blog Posts Unchanged */
 body.dark-mode .blog-post {
-    background: #34495e;
-    color: white;
+    background: white; /* Keep the blog post background white */
+    color: #333; /* Keep text dark */
 }
 
-body.dark-mode .blog-content h2 a {
-    color: #ecf0f1;
-}
-
-body.dark-mode .blog-content h5 {
-    color: #bdc3c7;
-}
-
+body.dark-mode .blog-content h2 a,
+body.dark-mode .blog-content h5,
 body.dark-mode .blog-content p {
-    color: #ecf0f1;
+    color: inherit; /* Keep original colors */
 }
+
 
 
 /* Blog Container */
