@@ -7,17 +7,27 @@
     <title>Jaida Lebron</title>
     <style>
 
-.cloud-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('clouds.png') center center / cover no-repeat;
-    z-index: 1000;
+@keyframes cloudAnimation {
+  0% {
+    transform: translateX(0);
     opacity: 1;
-    transition: opacity 2s ease;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
 }
+
+.cloud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('clouds.png') repeat-x;
+  animation: cloudAnimation 10s linear infinite;
+}
+
 
         body {
             margin: 0;
@@ -214,12 +224,20 @@ html, body {
     z-index: 1001; /* Ensure it's above everything in the side-nav */
 }
 
+.content {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.content.visible {
+  opacity: 1;
+}
+
+
     </style>
 </head>
 <body>
 
-
-<div id="cloud-overlay"></div>
 
 
     <span class="hamburger-icon" onclick="openNav()">&#9776;</span>
@@ -234,6 +252,7 @@ html, body {
         <div class="background-top"></div>
         <div class="blend-area"></div>
         <div class="background-bottom"></div>
+<div class="cloud"></div>
         <div class="content">
             <div class="rise-text">
                 <h1 class="title">Hi, my name is 👋</h1>
