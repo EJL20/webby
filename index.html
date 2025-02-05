@@ -99,19 +99,21 @@ nav ul li a:hover {
         }
 
         /* Moon Icon */
-        .moon-icon {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            font-size: 2rem;
-            cursor: pointer;
-            color: #f1c40f;
-            transition: color 0.3s ease;
-        }
+       /* Moon Icon - Ensure it's on top of navigation */
+.moon-icon {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #f1c40f;
+    transition: color 0.3s ease;
+    z-index: 1100; /* Ensures it stays above the navigation bar */
+}
 
-        .moon-icon:hover {
-            color: #f39c12;
-        }
+.moon-icon:hover {
+    color: #f39c12;
+}
 
         /* Project Flashcards */
         .projects {
