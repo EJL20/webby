@@ -10,7 +10,6 @@
             font-family: Arial, sans-serif;
             overflow-x: hidden;
         }
-
         .wrapper {
             position: relative;
             width: 100%;
@@ -21,7 +20,6 @@
             background-size: cover, cover;
             background-blend-mode: lighten; /* Adjust blend mode as needed */
         }
-
         /* Content Section */
         .content {
             position: absolute;
@@ -33,24 +31,20 @@
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
             z-index: 1;
         }
-
         .title {
             font-size: 2.5rem;
             margin: 1rem 0;
         }
-
         .subtitle {
             font-size: 1.2rem;
             margin: 1rem 0;
         }
-
         .button-container {
             display: flex;
             justify-content: left;
             gap: 1rem;
             margin-top: 2rem;
         }
-
         .button {
             text-decoration: none;
             padding: 0.5rem 1rem;
@@ -60,7 +54,6 @@
             background-color: #4b0082;
             transition: background-color 0.3s;
         }
-
         .button:hover {
             background-color: #6a0dad;
         }
@@ -69,7 +62,7 @@
 <body>
     <div class="wrapper">
         <!-- Content Section -->
-        <div class="content">
+        <div class="content" id="main-content">
             <h1 class="title">Hi, my name is 👋</h1>
             <h2 class="title">Jaida Lebron</h2>
             <p class="subtitle">
@@ -83,5 +76,13 @@
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var contentElement = document.getElementById("main-content");
+            if (contentElement) {
+                contentElement.scrollIntoView({ behavior: "smooth" });
+            }
+        });
+    </script>
 </body>
 </html>
