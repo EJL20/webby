@@ -6,20 +6,22 @@
     <title>My First Blog Post</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Add this CSS to your existing styles */
+        /* Global Styles */
         body {
             margin: 0;
             font-family: 'Roboto', sans-serif;
             overflow-x: hidden;
             padding-top: 60px; /* Adjust this value to match the height of your navbar */
+            background-color: #f4f4f4;
         }
 
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: #fff; /* Adjust as needed */
-            z-index: 1000; /* Ensure navbar is above other content */
+            background-color: #fff;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         nav ul {
@@ -27,7 +29,8 @@
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
+            background-color: #fff;
         }
 
         nav ul li {
@@ -38,16 +41,67 @@
             text-decoration: none;
             padding: 14px 20px;
             display: inline-block;
+            color: #333;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #ddd;
         }
 
         main {
             padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        h5 {
+            font-size: 1rem;
+            color: #777;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        ul {
+            padding-left: 20px;
         }
 
         footer {
             text-align: center;
             padding: 10px;
-            background-color: #f1f1f1;
+            background-color: #fff;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+            color: #777;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li a {
+                padding: 10px;
+            }
         }
     </style>
 </head>
