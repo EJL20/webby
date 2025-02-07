@@ -3,86 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jaida Lebron</title>
+    <title>Jaida Lebron - Contact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body {
+        /* General Styling */
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
-            overflow-x: hidden;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .wrapper {
-            position: relative;
-            width: 100%;
-            height: 200vh; /* Ensures scrolling */
-            background: 
-                url('1.png') no-repeat center top,
-                url('2.png') no-repeat center bottom;
-            background-size: cover, cover;
-            background-blend-mode: lighten; /* Adjust blend mode as needed */
-        }
-        /* Content Section */
-        .content {
-            position: absolute;
-            top: 100vh; /* Ensure it appears after background */
-            left: 10%;
-            width: 80%;
-            text-align: left;
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #2a2a72, #009ffd);
             color: white;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 20px;
         }
+
+        /* Wrapper */
+        .wrapper {
+            text-align: center;
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Typography */
         .title {
             font-size: 2.5rem;
-            margin: 1rem 0;
+            font-weight: 600;
         }
+
         .subtitle {
-            font-size: 1.2rem;
-            margin: 1rem 0;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            font-weight: 300;
         }
+
+        /* Buttons */
         .button-container {
             display: flex;
-            justify-content: left;
+            justify-content: center;
             gap: 1rem;
             margin-top: 2rem;
+            flex-wrap: wrap;
         }
+
         .button {
             text-decoration: none;
-            padding: 0.5rem 1rem;
+            padding: 0.75rem 1.5rem;
             font-size: 1rem;
-            border-radius: 0.5rem;
+            border-radius: 8px;
             color: white;
-            background-color: #4b0082;
-            transition: background-color 0.3s;
+            background: #4b0082;
+            transition: all 0.3s ease-in-out;
+            font-weight: 500;
+            border: 2px solid transparent;
         }
+
         .button:hover {
-            background-color: #6a0dad;
+            background: #6a0dad;
+            border-color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .button {
+                width: 100%;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
     <div class="wrapper">
-        <!-- Content Section -->
-        <div class="content" id="main-content">
-            <h1 class="title">Hi, my name is 👋</h1>
-            <h2 class="title">Jaida Lebron</h2>
-            <p class="subtitle">
-                I'm currently looking for full-time opportunities. If you'd like to get in touch, feel free to reach out.
-                I’d be happy to connect with you!
-            </p>
-            <div class="button-container">
-                <a href="https://github.com/EJL20/" class="button" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/in/jaida-lebron/" class="button" target="_blank">LinkedIn</a>
-                <a href="https://drive.google.com/file/d/14tbsoaDctrTKQeVzu-IpsGaRGY7VxXkU/view" class="button" target="_blank">Resume</a>
-            </div>
+        <h1 class="title">Hi, I'm Jaida Lebron 👋</h1>
+        <p class="subtitle">
+            I'm currently looking for full-time opportunities. If you'd like to get in touch, feel free to reach out.
+            I’d be happy to connect with you!
+        </p>
+        <div class="button-container">
+            <a href="https://github.com/EJL20/" class="button" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/jaida-lebron/" class="button" target="_blank">LinkedIn</a>
+            <a href="https://drive.google.com/file/d/14tbsoaDctrTKQeVzu-IpsGaRGY7VxXkU/view" class="button" target="_blank">Resume</a>
         </div>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var contentElement = document.getElementById("main-content");
-            if (contentElement) {
-                contentElement.scrollIntoView({ behavior: "smooth" });
-            }
-        });
-    </script>
 </body>
 </html>
