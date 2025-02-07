@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jaida Lebron - Contact</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
     <style>
         /* General Styling */
         * {
@@ -21,13 +21,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
             height: 100vh;
             padding: 20px;
+            text-align: center;
         }
 
         /* Wrapper */
         .wrapper {
-            text-align: center;
             max-width: 600px;
             background: rgba(255, 255, 255, 0.1);
             padding: 2rem;
@@ -46,6 +47,17 @@
             font-size: 1.1rem;
             margin-top: 1rem;
             font-weight: 300;
+        }
+
+        /* Wave Animation */
+        .wave {
+            display: inline-block;
+            animation: waveAnimation 1s ease-in-out infinite alternate;
+        }
+
+        @keyframes waveAnimation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(20deg); }
         }
 
         /* Buttons */
@@ -74,6 +86,23 @@
             border-color: white;
         }
 
+        /* Footer */
+        .footer {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .footer .name {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .footer .email {
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .title {
@@ -93,7 +122,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <h1 class="title">Hi, I'm Jaida Lebron 👋</h1>
+        <h1 class="title">Hi, I'm Jaida Lebron <span class="wave">👋</span></h1>
         <p class="subtitle">
             I'm currently looking for full-time opportunities. If you'd like to get in touch, feel free to reach out.
             I’d be happy to connect with you!
@@ -103,6 +132,12 @@
             <a href="https://www.linkedin.com/in/jaida-lebron/" class="button" target="_blank">LinkedIn</a>
             <a href="https://drive.google.com/file/d/14tbsoaDctrTKQeVzu-IpsGaRGY7VxXkU/view" class="button" target="_blank">Resume</a>
         </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p class="name">Jaida Lebron</p>
+        <p class="email">lebron.jaida@gmail.com</p>
     </div>
 </body>
 </html>
