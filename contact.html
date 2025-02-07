@@ -27,6 +27,36 @@
             text-align: center;
         }
 
+        /* Navbar */
+        .navbar {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            font-size: 1.2rem;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .nav-links a:hover {
+            color: #f5a623;
+        }
+
         /* Wrapper */
         .wrapper {
             max-width: 600px;
@@ -35,6 +65,7 @@
             border-radius: 12px;
             backdrop-filter: blur(10px);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            margin-top: 70px; /* Adjust for navbar spacing */
         }
 
         /* Typography */
@@ -117,10 +148,24 @@
                 width: 100%;
                 text-align: center;
             }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
     <div class="wrapper">
         <h1 class="title">Hi, I'm Jaida Lebron <span class="wave">👋</span></h1>
         <p class="subtitle">
